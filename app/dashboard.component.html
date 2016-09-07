@@ -1,9 +1,11 @@
 
-<h3>Top Todos</h3>
-<div class="grid grid-pad">
-  <div *ngFor="let todo of todos" (click)="gotoDetail(todo)" class="col-1-4">
-    <div class="module todo">
-      <h4>{{todo.name}}</h4>
-    </div>
-  </div>
-</div>
+<section class="main">
+	<h3>Muestra las primera 5 tareas :</h3>
+	<div class="grid grid-pad">
+	  <div *ngFor="let todo of todos" (click)="gotoDetail(todo)" class="col-1-4">
+	    <div class="module todo">
+	      <h4>{{todo.name}}</h4>
+	    </div>
+	  </div>
+	</div>
+</section>

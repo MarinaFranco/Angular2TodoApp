@@ -1,5 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { Todo } from './todo';
+//importa la dependencia al  servicio
 import { TodoService } from './todo.service';
 
 
@@ -81,14 +82,20 @@ export class TodosComponent implements OnInit {
 
 	constructor(private todoService: TodoService) { }
 
+  //lee los datos desde el servicio, usa el metodo del promise para llamada asincrofnas
+  // asigna los datos a uan varible tipo array del clase todos
 	getTodos(): void {
-		this.todoService.getTodos().then( todos=>this.todos=todos);
+		this.todoService.getTodos()
+    .then( 
+      todos=>this.todos=todos
+     );
 	}
 	
 	ngOnInit(): void {
 		this.getTodos();
 	}
 
+  //asigna el valor del objeto obtenido a una propiedad de la clase
 	onSelect(todo : Todo): void {
 		this.selectedTodo = todo;
 	}
